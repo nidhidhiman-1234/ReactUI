@@ -7,6 +7,8 @@ import { create } from 'zustand'
     count: 0,
     landing:true,
     showItems:false,
+    showproducts:false,
+    data:null,
     increase: (val) => set((state) => ({ count:val })),
     handleShowMenu: (val) => set((state) => ({ showMenu: val })),
     handleExploreModal: (val) => set((state) => ({ exploreModal: val })),
@@ -14,4 +16,7 @@ import { create } from 'zustand'
     handleShowCart: (val) => set((state) => ({ showCart: val })),
     handleLanding: (val) => set((state) => ({ landing: val })),
     handleItems: (val) => set((state) => ({ showItems: val })),
+    handleShowProductList: (val) => set((state) => ({ showproducts: val })),
+    getData: (val) => set((state) => ({ data: val })),
+    
   }))

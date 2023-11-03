@@ -36,17 +36,40 @@
     transform: rotate(360deg);
   }
 } */
-.demo-button-main{
+@font-face {
+  font-family: "UniverseS"; /*Can be any text*/
+  src: local("Univers-light-normal"),
+    url("./font/Univers-light-normal.ttf") format("truetype");
+}
+@font-face {
+  font-family: "UniverseM"; /*Can be any text*/
+  src: local("UniversBlack"), url("./font/UniversBlack.ttf") format("truetype");
+}
+@font-face {
+  font-family: "UniverseD"; /*Can be any text*/
+  src: local("UniversLTStd-Bold."),
+    url("./font/UniversLTStd-Bold.otf") format("truetype");
+}
+@font-face {
+  font-family: "UniverseJ"; /*Can be any text*/
+  src: local("UniversLTStd"), url("./font/UniversLTStd.otf") format("truetype");
+}
+@font-face {
+  font-family: "GBgrand"; /*Can be any text*/
+  src: local("EBGaramond-Regular"),
+  /* url("./font/EBGaramond-Regular.tff") format("truetype"); */
+}
+.demo-button-main {
   background-color: aqua;
-  position:absolute;
+  position: absolute;
   z-index: 4;
   bottom: 20px;
   right: 15px;
   background-color: antiquewhite;
   padding: 10px;
 }
-.demo-button-main-item{
-  position:absolute;
+.demo-button-main-item {
+  position: absolute;
   z-index: 4;
   bottom: 20px;
   left: 15px;

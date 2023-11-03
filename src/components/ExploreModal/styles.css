@@ -79,6 +79,7 @@ body {
   z-index: 1;
   left: 50%;
   transform: translateX(-50%);
+  border: none;
 }
 .explore {
   background-color: #000;
@@ -90,6 +91,7 @@ body {
 .img1 {
   width: 1rem;
   height: 1rem;
+  cursor: pointer;
 }
 .paragraph {
   padding: 0px 10px 0px 10px;
@@ -105,6 +107,7 @@ body {
   bottom: 20%; /* 50px from the bottom */
   transform: translateX(-50%);
   z-index: 4;
+  cursor: pointer;
 }
 .close-iconss {
   position: absolute;

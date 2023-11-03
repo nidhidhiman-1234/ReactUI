@@ -32,7 +32,7 @@ const ShoppingCart = ({
     setCounter(count);
   }, [count]);
   useEffect(() => {
-    handleCountChange(activeIndex, counter);
+    handleCountChange(activeIndex, parseInt(counter));
   }, [counter]);
   return (
     <div className="product">
@@ -46,6 +46,20 @@ const ShoppingCart = ({
             >
               ${total}
             </span>
+            {discount != 0 && (
+              <div className="discount-price">
+                <span className="product-name">${discount}</span>
+                <div className="gradient-box">
+                  <span className="save-per">Save {percentage}%</span>
+                </div>
+              </div>
+            )}
+            {/* <span
+              className={"product-name"}
+              style={{backgroundColor:'red'}}
+            >
+              ${total}
+            </span> */}
           </div>
         </div>
         <div className="before-counter-block">
@@ -54,8 +68,7 @@ const ShoppingCart = ({
               <div className="icon-holders">
                 <RemoveIcon
                   onClick={() => handleCartItems(id, "sub")}
-                  className="subtract-icon"
-                  fontSize="10px"
+                  style={{ fontSize: 20, marginTop: 4 }}
                 />
               </div>
 
@@ -63,10 +76,12 @@ const ShoppingCart = ({
                 className="inner-counter-eles"
                 value={counter}
                 onChange={(e) => {
-                  if (e.target.value > 0) {
-                    if (e.target.value <= 99) {
-                      setCounter(e.target.value);
-                    }
+                  if (!e.target.value) {
+                    setCounter(0);
+                    return;
+                  }
+                  if (e.target.value >= 0 && e.target.value <= 99) {
+                    setCounter(parseInt(e.target.value));
                   }
                 }}
                 inputMode="numeric"
@@ -75,7 +90,7 @@ const ShoppingCart = ({
               <div className="icon-holders2">
                 <AddIcon
                   onClick={() => handleCartItems(id, "add")}
-                  fontSize="10px"
+                  style={{ fontSize: 20, marginTop: 4 }}
                 />
               </div>
             </div>
@@ -85,14 +100,14 @@ const ShoppingCart = ({
               onClick={() => handleCartItems(id)}
             />
           </div>
-          {discount != 0 && (
+          {/* {discount != 0 && (
             <div className="discount-price">
               <span className="product-name">${discount}</span>
               <div className="gradient-box">
                 <span className="save-per">Save {percentage}%</span>
               </div>
             </div>
-          )}
+          )} */}
         </div>
         <div>
           {id == 4 && <span className="save-per-later">Order for later</span>}

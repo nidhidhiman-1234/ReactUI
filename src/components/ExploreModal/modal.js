@@ -1,7 +1,8 @@
 import React, { useRef, useState,useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -80,17 +81,20 @@ export default function Modal() {
           </Swiper>
           <div className="btn-container">
           {<div className="arrow-left" style={{opacity:swiperIndex!=0?1:0}}>
-            <img src="/left.png" className="img1" />
+            {/* <img src="/left.png" className="img1" /> */}
+            <ArrowBackIosNewIcon style={{fontSize:20,color:'#fff'}}/>
           </div>}
           <div style={{opacity:swiperIndex!=3?1:0}} className="arrow-right">
-            <img src="/right.png" className="img1" />
+          <ArrowForwardIosIcon style={{fontSize:20,color:'#fff'}}/>
+            {/* <img src="/right.png" className="img1" /> */}
           </div>
         </div>
         </div>
       </div>
       <div className="btn" onClick={()=>{
         handleExploreModal(true)
-        }}>
+        }}
+        >
         <span className="explore">EXPLORE NOW</span>
       </div>
     </div>

@@ -77,7 +77,7 @@ const Form1 = () => {
       <div className="parent-class">
           <div className="popup-container">
             <div className="close-icon" onClick={handleCloseIconClick}>
-              <img className="close-img" src="/close-icon.png" alt="Close" onClick={()=>handleFormModal(false)}/>
+              <img className="close-img-form" src="/close-icon.png" alt="Close" onClick={()=>handleFormModal(false)}/>
             </div>
             <div className="headertext">
               <span className="text1">
@@ -96,7 +96,7 @@ const Form1 = () => {
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Your Name*"
+                placeholder="Name"
                 value={formData.name}
                 onChange={handleInputChange}
               />
@@ -108,7 +108,7 @@ const Form1 = () => {
                 type="text"
                 id="email"
                 name="email"
-                placeholder="Your Email*"
+                placeholder="Email"
                 value={formData.email}
                 onChange={handleInputChange}
               />
@@ -116,7 +116,7 @@ const Form1 = () => {
                 </div> 
 
               <button
-                style={{ marginTop: "5%" }}
+                style={{ marginTop: "5%",cursor:"pointer"}}
                 className="submitbutton"
                 type="submit"
                 onClick={handleSubmit}

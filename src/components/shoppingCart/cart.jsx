@@ -3,11 +3,11 @@ import { useStore } from "../constant";
 import ShoppingCart from "./shop";
 import "./styles.css";
 const Cart = () => {
-  const {showCart,handleShowCart,increase}=useStore(state=>state)
+  const {showCart,handleShowCart,increase,count}=useStore(state=>state)
   const [products, setProducts] = useState([
     {
       name: "Testing Product",
-      image: "./ai3.jpg",
+      image: "./test1.png",
       discountedPrice: 150,
       price: 200,
       count: 1,
@@ -15,7 +15,7 @@ const Cart = () => {
     },
     {
       name: "Testing Product 2",
-      image: "./ai3.jpg",
+      image: "./test2.png",
       discountedPrice: 0,
       price: 200,
       count: 1,
@@ -23,20 +23,20 @@ const Cart = () => {
     },
     {
       name: "Testing Product 3",
-      image: "./ai3.jpg",
+      image: "./test2.png",
       discountedPrice: 0,
       price: 200,
       count: 1,
       id: 3,
     },
-    {
-      name: "Testing Product 4",
-      image: "./ai3.jpg",
-      discountedPrice: 50,
-      price: 200,
-      count: 1,
-      id: 4,
-    },
+    // {
+    //   name: "Testing Product 4",
+    //   image: "./test2.png",
+    //   discountedPrice: 50,
+    //   price: 200,
+    //   count: 1,
+    //   id: 4,
+    // },
 
     // Your initial product data goes here
   ]);
@@ -86,6 +86,12 @@ const Cart = () => {
       }),
     ]);
   } 
+// const handleItemCount=(id)=>{
+//   console.log("--------dadta====","triggered")
+//     setProducts([...products.filter((el,index)=>{
+//       return el.id!=id
+//     })])
+// }
   return (
     <>   
         <div className="main-containerss">
@@ -130,9 +136,9 @@ const Cart = () => {
                 Please allow for delivery 2-3 days either side of selected date
               </span>
             </div>
-            <div className="bottom-btn" style={{ backgroundColor: "#000" }}>
+            <button className="bottom-btn" style={{ backgroundColor: "#000",cursor:'pointer'}}>
               <span className="checkout-txt">CHECKOUT</span>
-            </div>
+            </button>
             <div className="fake-border"/>
             <span className="disclaimer-txt">
               Est mi sit consequat cursus. Cras eros in cras aliquam. Adipiscing
